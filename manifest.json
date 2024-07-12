@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "Random Wordle first guess",
+    "version": "1.0",
+    "description": "",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "combined_wordlist.txt"
+            ],
+            "matches": [
+                "https://*/*"
+            ]
+        }
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.nytimes.com/games/wordle/index.html"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
+}
